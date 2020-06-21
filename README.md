@@ -1,13 +1,12 @@
 # mDNS-shell
 start mDNS for FreeBSD/FreeNAS
 
-## Use
+## Use 
 ```shell
-# sh
-export hostname=your_host_name
-# csh/tcsh
-setenv hostname your_host_name
-
-
 ./mdns.sh
+# or
+sh ./mdns.sh
 ```
+
+## Notice 
+You may restart your OS or jails to start service
