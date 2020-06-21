@@ -1,3 +1,7 @@
+#!/bin/sh
+
+read -p "enter hostname:" hostname
+
 pkg install mDNSResponder_nss
 
 sysrc mdnsd_enable="YES"
@@ -13,6 +17,6 @@ sed -i 's/hosts: files dns/hosts: files mdns dns/' /etc/nsswitch.conf
 sysrc mdnsresponderposix_enable="YES"
 sysrc mdnsresponderposix_flags="-f /usr/local/etc/mdnsresponderposix.conf"
 
-service mdnsd start
-service mdnsresponderposix start
+service mdnsd restart
+service mdnsresponderposix restart
 service nsswitch restart
